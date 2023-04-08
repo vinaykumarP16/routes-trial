@@ -1,6 +1,6 @@
 const assets = {
   images: {
-    logo: require("./images/zoopboz.png")
+    logo: require("./images/typescript-logo-240.png")
   }
 };
 
