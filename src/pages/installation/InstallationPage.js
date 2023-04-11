@@ -1,8 +1,8 @@
 
-const InstallationPage = () => {
+const DashboardPage = () => {
   return (
-    <div>InstallationPage</div>
+    <div>Dashboard</div>
   );
 };
 
-export default InstallationPage;
+export default DashboardPage;

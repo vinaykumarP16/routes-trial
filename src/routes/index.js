@@ -1,10 +1,8 @@
-import { ReactNode } from "react";
 import { Route } from "react-router-dom";
 import PageWrapper from "../components/layout/PageWrapper";
 import appRoutes from "./appRoutes";
-import { RouteType } from "./config";
 
-const generateRoute = (routes: RouteType[]): ReactNode => {
+const generateRoute = (routes) => {
   return routes.map((route, index) => (
     route.index ? (
       <Route
@@ -33,4 +31,4 @@ const generateRoute = (routes: RouteType[]): ReactNode => {
   ));
 };
 
-export const routes: ReactNode = generateRoute(appRoutes);
+export const routes = generateRoute(appRoutes);

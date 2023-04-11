@@ -1,20 +1,18 @@
-import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
 import HomePage from "../pages/home/HomePage";
-import DefaultPage from "../pages/dashboard/DefaultPage";
-import DashboardIndex from "../pages/dashboard/DashboardIndex";
-import ChangelogPage from "../pages/changelog/ChangelogPage";
-import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
-import SaasPage from "../pages/dashboard/SaasPage";
-import ComponentPageLayout from "../pages/component/ComponentPageLayout";
+import ChangelogPage from "../pages/coupons/CouponsPage";
+import ComponentPageLayout from "../pages/campaigns/ComponentPageLayout";
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import AlertPage from "../pages/component/AlertPage";
-import ButtonPage from "../pages/component/ButtonPage";
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import InstallationPage from "../pages/installation/InstallationPage";
-import DocumentationPage from "../pages/documentation/DocumentationPage";
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import PosPage from "../pages/Pos/PosPage";
+import BasicCampaign from '../pages/campaigns/BasicCampaign';
+import FoodCampaign from "../pages/campaigns/FoodCampaign";
+import BannersPage from "../pages/documentation/BannersPage";
+import PushNotificationPage from "../pages/pushnotification/PushNotificationPage";
 
 const appRoutes = [
   {
@@ -23,56 +21,25 @@ const appRoutes = [
     state: "home"
   },
   {
-    path: "/installation",
-    element: <InstallationPage />,
-    state: "installation",
-    sidebarProps: {
-      displayText: "Installation",
-      icon: <FileDownloadOutlinedIcon />
-    }
-  },
-  {
     path: "/dashboard",
-    element: <DashboardPageLayout />,
+    element: <InstallationPage />,
     state: "dashboard",
     sidebarProps: {
       displayText: "Dashboard",
       icon: <DashboardOutlinedIcon />
-    },
-    child: [
-      {
-        index: true,
-        element: <DashboardIndex />,
-        state: "dashboard.index"
-      },
-      {
-        path: "/dashboard/default",
-        element: <DefaultPage />,
-        state: "dashboard.default",
-        sidebarProps: {
-          displayText: "Default"
-        },
-      },
-      {
-        path: "/dashboard/analytics",
-        element: <AnalyticsPage />,
-        state: "dashboard.analytics",
-        sidebarProps: {
-          displayText: "Analytic"
-        }
-      },
-      {
-        path: "/dashboard/saas",
-        element: <SaasPage />,
-        state: "dashboard.saas",
-        sidebarProps: {
-          displayText: "Saas"
-        }
-      }
-    ]
+    }
   },
   {
-    path: "/component",
+    path: "/pos",
+    element: <PosPage />,
+    state: "pos",
+    sidebarProps: {
+      displayText: "POS",
+      icon: <ReceiptIcon />
+    }
+  },
+  {
+    path: "/campaign",
     element: <ComponentPageLayout />,
     state: "component",
     sidebarProps: {
@@ -81,41 +48,51 @@ const appRoutes = [
     },
     child: [
       {
-        path: "/component/alert",
-        element: <AlertPage />,
-        state: "component.alert",
+        path: "/campaign/basic",
+        element: <BasicCampaign />,
+        state: "campaign.basic",
         sidebarProps: {
-          displayText: "Alert"
+          displayText: "Basic Campaign"
         },
       },
       {
-        path: "/component/button",
-        element: <ButtonPage />,
-        state: "component.button",
+        path: "/campaign/food",
+        element: <FoodCampaign />,
+        state: "campaign.food",
         sidebarProps: {
-          displayText: "Button"
+          displayText: "Food Campaign"
         }
       }
     ]
   },
   {
-    path: "/documentation",
-    element: <DocumentationPage />,
-    state: "documentation",
+    path: "/banners",
+    element: <BannersPage />,
+    state: "banners",
     sidebarProps: {
-      displayText: "Documentation",
+      displayText: "Banners",
       icon: <ArticleOutlinedIcon />
     }
   },
   {
-    path: "/changelog",
+    path: "/coupons",
     element: <ChangelogPage />,
-    state: "changelog",
+    state: "coupons",
     sidebarProps: {
-      displayText: "Changelog",
+      displayText: "Coupons",
       icon: <FormatListBulletedOutlinedIcon />
     }
+  },
+  {
+    path: "/push-noti",
+    element: <PushNotificationPage />,
+    state: "push-noti",
+    sidebarProps: {
+      displayText: "Push notification",
+      icon: <NotificationsActiveIcon />
+    }
   }
+
 ];
 
 export default appRoutes;
