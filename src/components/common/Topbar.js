@@ -11,9 +11,11 @@ import {
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const navigate=useNavigate();
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -24,7 +26,7 @@ const Topbar = () => {
   };
 
   const handleOpenProfile = () => {
-    alert("handling profile");
+    navigate('user/settings')
   };
 
   const handleLogOut = () => {

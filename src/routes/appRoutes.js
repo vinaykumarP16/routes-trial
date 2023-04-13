@@ -13,12 +13,19 @@ import BasicCampaign from '../pages/campaigns/BasicCampaign';
 import FoodCampaign from "../pages/campaigns/FoodCampaign";
 import BannersPage from "../pages/documentation/BannersPage";
 import PushNotificationPage from "../pages/pushnotification/PushNotificationPage";
+import Login from "../pages/login/Login";
+import UserSettingsPage from "../pages/userSettings/UserSettingsPage";
 
 const appRoutes = [
   {
     index: true,
     element: <HomePage />,
     state: "home"
+  },
+  {
+    path:'/login',
+    element:<Login />,
+    state:'login',
   },
   {
     path: "/dashboard",
@@ -91,6 +98,11 @@ const appRoutes = [
       displayText: "Push notification",
       icon: <NotificationsActiveIcon />
     }
+  },
+  {
+    path:'user/settings',
+    element:<UserSettingsPage/>,
+    state:'user-settings',
   }
 
 ];
