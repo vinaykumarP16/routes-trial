@@ -20,17 +20,20 @@ const appRoutes = [
   {
     index: true,
     element: <HomePage />,
-    state: "home"
+    state: "home",
+    allowedRoles:['Admin'],
   },
   {
     path:'/login',
     element:<Login />,
     state:'login',
+    allowedRoles:['Admin'],
   },
   {
     path: "/dashboard",
     element: <InstallationPage />,
     state: "dashboard",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "Dashboard",
       icon: <DashboardOutlinedIcon />
@@ -40,6 +43,7 @@ const appRoutes = [
     path: "/pos",
     element: <PosPage />,
     state: "pos",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "POS",
       icon: <ReceiptIcon />
@@ -49,6 +53,7 @@ const appRoutes = [
     path: "/campaign",
     element: <ComponentPageLayout />,
     state: "component",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "Components",
       icon: <AppsOutlinedIcon />
@@ -76,6 +81,7 @@ const appRoutes = [
     path: "/banners",
     element: <BannersPage />,
     state: "banners",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "Banners",
       icon: <ArticleOutlinedIcon />
@@ -85,6 +91,7 @@ const appRoutes = [
     path: "/coupons",
     element: <ChangelogPage />,
     state: "coupons",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "Coupons",
       icon: <FormatListBulletedOutlinedIcon />
@@ -94,6 +101,7 @@ const appRoutes = [
     path: "/push-noti",
     element: <PushNotificationPage />,
     state: "push-noti",
+    allowedRoles:['Admin'],
     sidebarProps: {
       displayText: "Push notification",
       icon: <NotificationsActiveIcon />
@@ -103,6 +111,7 @@ const appRoutes = [
     path:'user/settings',
     element:<UserSettingsPage/>,
     state:'user-settings',
+    allowedRoles:['Admin'],
   }
 
 ];
